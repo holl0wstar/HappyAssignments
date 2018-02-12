@@ -5,8 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HappyAssignments"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Happy Assignments" Height="350" Width="525" Topmost="True"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        MouseDown="Window_MouseDown"
+        ResizeMode="CanResizeWithGrip"
+        Background="White">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="315*"/>
+        </Grid.RowDefinitions>
+        <RichTextBox x:Name="rtbContent" Grid.Row="2" Height="Auto" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="Auto" BorderThickness="0,0,0,0" Padding="5" Margin="10,10,10,10" Background="Transparent">
+            <FlowDocument FontWeight="Bold" Foreground="#FFC70000">
+                <Paragraph>
+                    <Run Text="Insert your annotations."/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <ComboBox x:Name="cbFileSelect" HorizontalAlignment="Left" Margin="84,0,0,8" Width="120" Height="22" VerticalAlignment="Bottom" MaxWidth="120" MaxHeight="22" MinWidth="120" MinHeight="22" Visibility="Hidden" Grid.RowSpan="2"/>
+        <Label x:Name="lblFileSelect" Content="File Selection" HorizontalAlignment="Left" Margin="0,2,0,0" Height="30" VerticalAlignment="Top" MinHeight="30" MaxHeight="30" Width="80" MinWidth="80" MaxWidth="80" Visibility="Hidden" Grid.RowSpan="2"/>
+        <Button x:Name="btnNew" Content="Save As" HorizontalAlignment="Left" Margin="85,2.515,0,4" Width="74" MaxWidth="75" MaxHeight="20" MinWidth="75" MinHeight="20" Click="btnNew_Click" Height="20" VerticalAlignment="Center" Grid.Row="1"/>
+        <Button x:Name="btnRefresh" Content="Load File" HorizontalAlignment="Left" Margin="5,2.515,0,4" Width="75" MaxWidth="75" MaxHeight="20" MinWidth="75" MinHeight="20" Click="btnRefresh_Click" Height="20" VerticalAlignment="Center" Grid.Row="1"/>
+        <Button x:Name="btnClose" Content="X" Click="Button_Click" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Right" Width="19" MaxWidth="19" MinWidth="19" MaxHeight="20" MinHeight="20" Height="20" VerticalAlignment="Center" Margin="0,0,0,15" Grid.RowSpan="2"/>
+
     </Grid>
 </Window>
